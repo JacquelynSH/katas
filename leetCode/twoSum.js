@@ -6,22 +6,22 @@
 
 
 
-var twoSum = function (nums, target) {
-  const copyNums = [...nums];
-  const result = [];
-  for (let i = 0; i < nums.length; i++) {
-    for (let y = 1; y < copyNums.length; y++) {
-      if (copyNums[y] + nums[i] === target) {
-        result.push(i, y)
+
+  var twoSum = function (nums, target) {
+    const copyNums = [...nums];
+    for (let i = 0; i < nums.length; i++) {
+      for (let y = 1; y < copyNums.length; y++) {
+        if (copyNums[y] + nums[i] === target && i !== y) {
+          return [i, y]; 
+        }
       }
     }
-  }
-  return result.slice(0, 2);
+  
 };
 
-console.log(twoSum([2,7,11,15], 9));
+console.log(twoSum([2, 7, 11, 15], 9));
 //[0, 1]
-console.log(twoSum([3,2,4], 6));
+console.log(twoSum([3, 2, 4], 6));
 //[1, 2]
-console.log(twoSum([3,3], 6));
+console.log(twoSum([3, 3], 6));
 //[0, 1]
