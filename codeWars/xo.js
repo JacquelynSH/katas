@@ -14,23 +14,28 @@
 // if string contains one but not the other it is false 
 
 function XO(str) {
-  const x = [];
-  const o = [];
+  // const x = [];
+  // const o = [];
 
-  for (let i = 0; i < str.length; i++) {
-    if (str[i].toLowerCase() === 'x') {
-      x.push(str[i]);
-    }
-    if (str[i].toLowerCase() === 'o') {
-      o.push(str[i]);
-    }
-  }
-  if (x.length === o.length || x.length === 0 && o.length === 0) {
-    return true;
-  }
-  else {
-    return false
-  }
+  // for (let i = 0; i < str.length; i++) {
+  //   if (str[i].toLowerCase() === 'x') {
+  //     x.push(str[i]);
+  //   }
+  //   if (str[i].toLowerCase() === 'o') {
+  //     o.push(str[i]);
+  //   }
+  // }
+  // if (x.length === o.length || x.length === 0 && o.length === 0) {
+  //   return true;
+  // }
+  // else {
+  //   return false
+  // }
+
+  let x = str.match(/x/gi);
+  let o = str.match(/o/gi);
+  
+  return (x && x.length) === (o && o.length);
 }
 
 console.log(XO('xo'));
